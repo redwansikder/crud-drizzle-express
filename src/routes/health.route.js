@@ -1,6 +1,8 @@
-const router = require("express").Router();
-const { db } = require("../db");
-const { sql } = require("drizzle-orm");
+import { Router } from "express";
+import { db } from "../db/index.js";
+import { sql } from "drizzle-orm";
+
+const router = Router();
 
 router.get("/", async (req, res) => {
   try {
@@ -19,4 +21,4 @@ router.get("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
