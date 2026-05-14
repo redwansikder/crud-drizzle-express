@@ -1,7 +1,7 @@
 {
   "name": "crud-drizzle-express",
   "version": "1.0.0",
-  "type": "commonjs",
+  "type": "module",
   "main": "src/server.js",
   "scripts": {
     "dev": "node --watch --env-file=.env src/server.js",

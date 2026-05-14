@@ -1,5 +1,5 @@
-const app = require("./app");
-const db = require("./config/db");
+import app from "./app.js";
+import { pool } from "./db/index.js";
 
 const PORT = process.env.PORT || 3000;
 
@@ -7,7 +7,7 @@ let server;
 
 async function startServer() {
   try {
-    await db.query("SELECT 1");
+    await pool.query("SELECT 1");
 
     console.log("Database connected");
 
@@ -30,7 +30,7 @@ async function shutdown(signal) {
       });
     }
 
-    await db.end();
+    await pool.end();
 
     console.log("Database pool closed");
 
