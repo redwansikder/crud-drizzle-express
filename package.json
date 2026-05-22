@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "node --watch --env-file=.env src/server.js",
     "start": "node --env-file=.env src/server.js",
-    "generate": "drizzle-kit generate",
-    "migrate": "drizzle-kit migrate"
+    "generate": "node --env-file=.env ./node_modules/drizzle-kit/bin.cjs generate",
+    "migrate": "node --env-file=.env src/db/migrate.js"
   },
   "dependencies": {
     "cors": "^2.8.6",
@@ -18,6 +18,6 @@
     "pg": "^8.20.0"
   },
   "devDependencies": {
-    "drizzle-kit": "^0.31.10"
+    "drizzle-kit": "^0.30.5"
   }
 }
